@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/socket.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+
+<body>
+    <div class="droptarget" ondrop="drop.ondrop(event)" ondragover="drop.ondragover()"style="position: fixed;height: 100%;width: 100%;z-index:1"></div>
+    <nav class="navbar   pl-5 text-light  h3  fixed-top  font-weight-bold bg-secondary shadow-lg "
+        style="background-image: linear-gradient(141deg, #83bfa5 80%, #2de286 127%);">
+        <span class="navbar-text">
+            Chat
+        </span>
+    </nav>
+    
+    <div class="p-1 pt-5 mt-5" id="textcontainer">
+        <!-- <div style="  display: flex;
+        flex-direction: row-reverse;">
+
+            <div class="form shadow shadow-lg rounded rounded-lg m-1  w-50">
+                <p class="tag">Lorem ipsum</p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore modi tempore iusto atque
+                accusamus
+                nihil!
+                Eos, sapiente esse laborum, dolorum, delectus officia itaque sequi voluptatem facere quidem
+                mollitia
+                quod
+                ut?
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore modi tempore iusto atque
+                accusamus
+                nihil!
+                Eos, sapiente esse laborum, dolorum, delectus officia itaque sequi voluptatem facere quidem
+                mollitia
+                quod
+                ut?s
+            </div>
+
+        </div>-->
+
+
+    </div>
+    <div class="d-inline-block m-5"></div>
+
+
+    <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
+        <input class="form-control form-control-sm mr-1" type="text" placeholder="Type here" id="input">
+
+        <button type="button" class="btn btn-sm btn-outline-success" id="send">Send</button>
+    </nav>
+
+
+</body>
+
+</html>
+
+<style>
+    .tag {
+        color: rgba(0, 0, 0, 0.363);
+        font-size: 11px;
+    }
+
+    .form {
+        width: auto;
+        max-width: 70%;
+        margin: 3%;
+        padding: 2%;
+        word-wrap: break-word;
+    }
+
+    body {
+        background-color: whitesmoke;
+    }
+
+    img {
+        width: 15px;
+        margin-right: 10px;
+    }
+</style>
+<script src="/js/index.js"></script>
