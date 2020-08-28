@@ -24,15 +24,23 @@ io.on('connection', function (socket) {
     socket.on('sendMsg', (data) => {
         // console.log("‏Msg send, id:" + data.id);
         if (data.type == "file") {
-            fileData[socket.id] = data.data;
-            fileData.list.push(socket.id);
-            io.sockets.emit("newMsg", { ...data, data: socket.id });
-            console.log({ ...data, data: socket.id });
+            var fileid;
+            const genfileid = () => {
+                fileid = Math.random().toString(36).substring(7)
+                if (fileData[fileid] != undefined) {
+                    genfileid();
+                }
+            };
+            
+            fileData[fileid] = data.data;
+            fileData.list.push(fileid);
+            io.sockets.emit("newMsg", { ...data, data: fileid });
+            console.log({ ...data, data: fileid });
             if (fileData.list.length > 3) {
                 fileData[fileData.list[0]] = undefined;
                 fileData.list.splice(0, 1)
             }
-        } else if (data.type == "text"){
+        } else if (data.type == "text") {
             io.sockets.emit("newMsg", data);
             console.log(data);
         }

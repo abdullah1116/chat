@@ -36,7 +36,6 @@ socket.on('newMsg', data => {
 });
 
 
-
 $("#send").click(() => {
     if ($('#input').val() != "") {
         let data = {};
@@ -84,17 +83,19 @@ const drop = {
         }
     },
     onclick: (e) => {
+        if (e.file !=undefined) {
         var file = e.files[0],
             reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = function (event) {
-            let data = {};
-            data.id = id;
-            data.name = file.name
-            data.data = event.target.result;
-            data.type = "file";
-            sendMsg(data);
-            e.files = undefined
+            reader.readAsDataURL(file);
+            reader.onload = function (event) {
+                let data = {};
+                data.id = id;
+                data.name = file.name
+                data.data = event.target.result;
+                data.type = "file";
+                sendMsg(data);
+                e.files = undefined
+            }
         }
     },
 
@@ -137,3 +138,4 @@ const filehandler = (e) => {
     };
 
 }
+console.log($)
