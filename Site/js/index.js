@@ -1,6 +1,7 @@
 var socket = io.connect();
 var id = undefined;
 
+
 socket.emit("get")
 
 const sendMsg = (data) => {
@@ -10,10 +11,9 @@ const sendMsg = (data) => {
 socket.on('id', data => {
     if (id == undefined) {
         id = data;
-        $("#id").text(data);
+        $("#id").textContent = data;
     }
 });
-
 
 socket.on('newMsg', data => {
     // console.log(data);
@@ -34,7 +34,6 @@ socket.on('newMsg', data => {
             </div>`)
     }
 });
-
 
 $("#send").click(() => {
     if ($('#input').val() != "") {
@@ -60,7 +59,6 @@ $("#input").keypress(function (e) {
     }
 });
 
-
 const drop = {
     ondrop: (e) => {
         e.preventDefault();
@@ -82,10 +80,11 @@ const drop = {
             }
         }
     },
+
     onclick: (e) => {
-        if (e.file !=undefined) {
-        var file = e.files[0],
-            reader = new FileReader();
+        if (e.files != undefined) {
+            var file = e.files[0],
+                reader = new FileReader();
             reader.readAsDataURL(file);
             reader.onload = function (event) {
                 let data = {};
@@ -104,7 +103,6 @@ const drop = {
     }
 }
 
-
 const filehandler = (e) => {
     var target = "/file?" + $(e).attr('data');
     var xhr = new XMLHttpRequest();
@@ -120,7 +118,6 @@ const filehandler = (e) => {
     };
     xhr.onload = function () {
         if (xhr.response != "Cannot GET") {
-
             var element = document.createElement('a');
             element.setAttribute('href', xhr.response);
             element.setAttribute('download', $(e).attr('name'));
@@ -128,8 +125,6 @@ const filehandler = (e) => {
             element.click();
             element.remove();
             $(e)[0].children[0].children[0].textContent = `✔`;
-            // document.body.appendChild(element);
-            // document.body.removeChild(element);
         } else {
             alert("file not found");
             $(e).parent().remove();
@@ -138,4 +133,3 @@ const filehandler = (e) => {
     };
 
 }
-console.log($)
