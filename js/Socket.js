@@ -7,7 +7,7 @@ module.exports = function (server) {
     var io = socket(server);
     io.on('connection', function (socket) {
         socket.on('get', (data) => {
-            socket.emit("id", socket.id)
+            socket.emit("id", socket.id);
             console.log("Clint connected, id:" + socket.id);
         })
         socket.on('sendMsg', (data) => {
@@ -21,13 +21,12 @@ module.exports = function (server) {
                 console.log({ ...data, data: fileid });
                 if (fileData.list.length > 3) {
                     fileData[fileData.list[0]] = undefined;
-                    fileData.list.splice(0, 1)
+                    fileData.list.splice(0, 1);
                 }
             } else if (data.type == "text") {
                 io.sockets.emit("newMsg", data);
                 console.log(data);
             }
-            // io.emit("id" , socket.id)
         })
     });
 
@@ -36,7 +35,7 @@ module.exports = function (server) {
         if (fileData[rand] != undefined) {
             return genfileid();
         } else {
-            return rand
+            return rand;
         }
     };
 }
