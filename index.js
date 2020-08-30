@@ -1,11 +1,6 @@
 const express = require('express');
 const app = express();
 
-
-
-var fileData = {}
-fileData.list = [];
-
 var server = app.listen(80, function () {
     console.log("Server started :80");
 })
@@ -15,5 +10,6 @@ app.get('/file', function (req, res) {
 })
 
 app.use(express.static('Site'));
+
 
 require('./js/Socket')(server);

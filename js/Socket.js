@@ -1,8 +1,10 @@
 module.exports = function (server) {
-
     const socket = require('socket.io')
 
-    var io = socket(server);    
+    var fileData = {}
+    fileData.list = [];
+
+    var io = socket(server);
     io.on('connection', function (socket) {
         socket.on('get', (data) => {
             socket.emit("id", socket.id)
@@ -29,7 +31,6 @@ module.exports = function (server) {
         })
     });
 
-
     const genfileid = () => {
         let rand = Math.random().toString(36).substring(7)
         if (fileData[rand] != undefined) {
@@ -38,8 +39,4 @@ module.exports = function (server) {
             return rand
         }
     };
-
-
-
-    console.log("socl");
 }
