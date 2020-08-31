@@ -11,7 +11,7 @@ const sendMsg = (data) => {
 socket.on('id', data => {
     if (id == undefined) {
         id = data;
-        $("#id").textContent = data;
+        $("#id")[0].textContent = data;
     }
 });
 
