@@ -6,23 +6,18 @@ var server,
 
 const serverStart = () => {
     if (!serverStatus) {
-        server = app.listen(80, function () {
-            console.log("Server started :80");
-        })
-        serverStatus = true;
-
+        server = app.listen(80, function () {console.log("Server started :80");});
+        serverStatus =true;
     }
 }
 serverStart();
 
 const serverStop = () => {
     if (serverStatus){
-
         server.close();
         serverStatus = false;
     }
 }
-
 
 app.get('/file', (req, res) => {
     res.send(fileData[decodeURI(req._parsedUrl.query)] == undefined ? "Cannot GET" : fileData[decodeURI(req._parsedUrl.query)]);

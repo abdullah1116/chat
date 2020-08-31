@@ -17,7 +17,7 @@ module.exports = (serverStart,serverStop) => {
         })
 
         // and load the index.html of the app.
-        win.loadFile('./Site/form.html')
+        win.loadFile('./form/form.html')
 
         //events      
         ipcMain.on('start', (e) => {

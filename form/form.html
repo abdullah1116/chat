@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="../Site/css/bootstrap.css">
 </head>
 
 <body style="padding: 10px;">
@@ -19,18 +19,14 @@
 
 
   const start = () => {
-    if (document.getElementById("status").textContent != "Running.") {
       if (ipc.sendSync('start') == "ok") {
         document.getElementById("status").textContent = "Running.";
       }
-    }
   }
   const stop = () => {
-    if (document.getElementById("status").textContent != "Stopped.") {
       if (ipc.sendSync('stop') == "ok") {
         document.getElementById("status").textContent = "Stopped.";
       }
-    }
   }
 
 
