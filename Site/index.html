@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head>
     <!-- integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous" -->
     <script src="/js/jquery.js"></script>
@@ -8,12 +9,18 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>Chat</title>
 </head>
+
 <body>
     <div class="droptarget" ondrop="drop.ondrop(event)" ondragover="drop.ondragover()"
         style="position: fixed;height: 100%;width: 100%;z-index:1"></div>
+
     <nav class="navbar   pl-5 text-light  h3  fixed-top  font-weight-bold bg-secondary shadow-lg "
         style="background-image: linear-gradient(141deg, #83bfa5 80%, #2de286 127%);">
-        <span class="navbar-text">Chat</span>
+
+        <a class="navbar-brand" href="#">
+            <img src="./favicon.ico" alt="">
+            Chat
+        </a>
         <p class="tag" id="id"></p>
     </nav>
 
@@ -35,5 +42,6 @@
     </nav>
     <input type="file" id="fileInput" onchange="drop.onclick(this)" style="display: none;"></input>
 </body>
+
 </html>
 <script src="/js/index.js"></script>

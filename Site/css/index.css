@@ -26,3 +26,8 @@ img {
     z-index: 10;
     cursor: pointer;
 }
+
+.navbar-brand{
+    color: white;
+    font-weight: bold;
+}

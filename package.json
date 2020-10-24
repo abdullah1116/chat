@@ -10,10 +10,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "express": "^4.17.1"
+    "electron-builder": "^22.8.0",
+    "electron": "^10.1.1"
   },
   "dependencies": {
-    "electron-builder": "^22.8.0",
+    "express": "^4.17.1",
+    "javascript-stringify": "^2.0.1",
     "socket.io": "^2.3.0"
   }
 }

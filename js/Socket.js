@@ -17,14 +17,14 @@ module.exports = function (server) {
 
                 fileData[fileid] = data.data;
                 fileData.list.push(fileid);
-                io.sockets.emit("newMsg", { ...data, data: fileid });
+                io.sockets.emit("newMsg", { ...data, data: fileid, id:socket.id });
                 console.log({ ...data, data: fileid });
                 if (fileData.list.length > 3) {
                     fileData[fileData.list[0]] = undefined;
                     fileData.list.splice(0, 1);
                 }
             } else if (data.type == "text") {
-                io.sockets.emit("newMsg", data);
+                io.sockets.emit("newMsg", {...data,id:socket.id});
                 console.log(data);
             }
         })

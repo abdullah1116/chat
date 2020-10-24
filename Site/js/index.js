@@ -69,7 +69,6 @@ const drop = {
                 reader.readAsDataURL(file);
                 reader.onload = function (event) {
                     let data = {};
-                    data.id = id;
                     data.type = "file";
                     data.data = event.target.result;
                     data.name = file.name
@@ -88,7 +87,6 @@ const drop = {
             reader.readAsDataURL(file);
             reader.onload = function (event) {
                 let data = {};
-                data.id = id;
                 data.name = file.name
                 data.data = event.target.result;
                 data.type = "file";
