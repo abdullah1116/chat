@@ -4,18 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "node .",
+    "i": "npm install"
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "electron-builder": "^22.8.0",
-    "electron": "^10.1.1"
-  },
+  "devDependencies": {},
   "dependencies": {
     "express": "^4.17.1",
-    "javascript-stringify": "^2.0.1",
     "socket.io": "^2.3.0"
   }
 }
