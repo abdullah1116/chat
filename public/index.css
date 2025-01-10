@@ -1,0 +1,13 @@
+html {
+  background-color: #bedbc1;
+}
+body {
+  background-color: #fff0 !important;
+}
+
+.img-cont {
+  text-align: center;
+  img {
+    width: min(calc(95vw), 20rem);
+  }
+}

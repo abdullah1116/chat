@@ -1,0 +1,32 @@
+.tag {
+  color: rgba(0, 0, 0, 0.363);
+  font-size: 11px;
+  margin-bottom: 0;
+}
+
+.form {
+  width: auto;
+  max-width: 70%;
+  margin: 3%;
+  padding: 2%;
+  word-wrap: break-word;
+  background-color: white;
+}
+
+body {
+  background-color: #f2f2f2;
+}
+s .link {
+  z-index: 10;
+  cursor: pointer;
+}
+
+.navbar-brand {
+  color: white;
+  font-weight: bold;
+
+  img {
+    width: 43px;
+    margin: -15px 10px -15px -15px;
+  }
+}
