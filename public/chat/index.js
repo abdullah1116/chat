@@ -1,4 +1,6 @@
-var socket = new WebSocket('ws://localhost:3001');
+var socket = new WebSocket(
+  `${location.protocol === 'https:' ? 'wss' : 'ws'}://${location.host}/ws`
+);
 var id = undefined;
 
 socket.onmessage = (event) => {

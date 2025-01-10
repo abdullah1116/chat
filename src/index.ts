@@ -1,8 +1,10 @@
 import { file } from 'bun';
 import { Hono } from 'hono';
-import './socket';
+import { socketInit } from './socket';
 
-const app = new Hono();
+export const app = new Hono();
+
+export const websocket = socketInit(app);
 
 app.get('/', (c) => new Response(file('./public/index.html')));
 app.get('/favicon.ico', (c) => new Response(file('./public/favicon.ico')));
@@ -38,4 +40,4 @@ app.get('/assets/*', async (c) => {
   return new Response(_file);
 });
 
-export default app;
+export default { fetch: app.fetch, websocket, port: 8020 };

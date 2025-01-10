@@ -1,7 +1,8 @@
 {
   "name": "myapp",
   "scripts": {
-    "dev": "bun run --hot src/index.ts"
+    "dev": "bun run --hot src/index.ts",
+    "serve": "bun run src/index.ts"
   },
   "dependencies": {
     "@faker-js/faker": "^9.3.0",
