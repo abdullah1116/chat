@@ -1,0 +1,52 @@
+@function gcolor1($lightness: 0, $desaturation: 0) {
+  $base-color: #e04462;
+  @return desaturate(lightean($base-color, $lightness), $desaturation);
+}
+
+@function gcolor2($lightness: 0, $desaturation: 0) {
+  $base-color: #f9c535;
+  @return desaturate(lighten($base-color, $lightness), $desaturation);
+}
+
+$color: #e04462;
+$color1: #e04462;
+$color2: #f9c535;
+$color3: #334854;
+$color4: #efecea;
+
+$color_light10: lighten($color, 10%);
+
+$color_light15: lighten($color, 15%);
+
+$color_light20: lighten($color, 20%);
+$color_light20_gray10: desaturate(lighten($color, 20%), 10%);
+
+$color_light20_gray20: desaturate(lighten($color, 20%), 20%);
+
+// btn, etc border
+$color_light20_gray25: desaturate(lighten($color, 20%), 25%);
+
+$color_light45: lighten($color, 45%);
+
+$color_light50: lighten($color, 50%);
+
+$color_light50_gray10: desaturate(lighten($color, 50%), 10%);
+
+$color_light54_gray05: desaturate(lighten($color, 54%), 05%);
+
+$color_light55: desaturate(lighten($color, 54%), 00%);
+$color_light55_gray10: desaturate(lighten($color, 54%), 10%);
+
+// btn bg
+$color_light60: lighten($color, 60%);
+$color_light60_gray10: desaturate(lighten($color, 60%), 10%);
+
+$color_light65: lighten($color, 65%);
+$color_light65_gray20: desaturate(lighten($color, 65%), 20%);
+
+$color_light70: lighten($color, 70%);
+// web bg
+$color_light72: lighten($color, 72%);
+
+$backdrop-color: rgba(mix($color, #000, 20%), 0.8);
+$popup-hover-bg: rgba(lighten($color, 10%), 0.15);

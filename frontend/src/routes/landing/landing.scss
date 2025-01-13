@@ -1,0 +1,19 @@
+@use '../../shared/common.scss' as *;
+
+.info {
+  margin-bottom: 4rem;
+}
+
+.footer {
+  height: 4rem;
+
+  color: darken(desaturate($color2, 40), 10);
+  position: fixed;
+  bottom: 0px;
+}
+
+.footer-decoy {
+  //   right: 0;
+  left: 0px;
+  height: 4rem;
+}

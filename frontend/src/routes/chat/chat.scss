@@ -1,0 +1,105 @@
+@use '../../shared/common.scss' as *;
+
+.info {
+  margin-bottom: 4rem;
+}
+
+.chat {
+  padding: 0.9rem 0.5rem;
+
+  .messages {
+    display: flex;
+    flex-direction: column;
+
+    .msg {
+      padding: 0.2rem 0.75rem 0.5rem 0.75rem;
+      margin-bottom: 10px;
+      width: fit-content;
+      max-width: min(40rem, 80vw);
+
+      background-color: darken(desaturate($color1, 50), 20);
+      border-top: 0.3rem solid saturate($color1, 30);
+
+      .msg-from {
+        color: lighten(darken(desaturate($color1, 50), 20), 20);
+        font-size: 0.9rem;
+        font-weight: bold;
+        //   margin-bottom: 5px;
+      }
+
+      .msg-text {
+        font-size: 1.1rem;
+      }
+
+      &.msg-send {
+        background-color: darken(desaturate($color2, 65), 20);
+        border-top: 0.3rem solid saturate($color2, 30);
+
+        align-self: flex-end; // move to right side
+
+        .msg-from {
+          color: lighten(darken(desaturate($color2, 65), 20), 20);
+        }
+      }
+    }
+
+    &.msg-receive {
+      background-color: #ddffdd; // light greenish background for received messages
+      align-self: flex-start; // move to left side
+      border-bottom-left-radius: 0; // adjust radius
+
+      .msg-from {
+        color: black;
+      }
+    }
+  }
+}
+
+textarea.text-input {
+  font-size: 1.2rem !important;
+
+  font-family: 'Open Sans', 'Courier New', Courier, monospace;
+}
+
+.footer.footer-chat {
+  width: 100%;
+  height: 4rem;
+
+  left: 0px;
+  position: fixed;
+
+  display: flex;
+
+  bottom: 0px;
+  background-color: darken(desaturate($color3, 40), 10);
+
+  textarea {
+    height: 100%;
+    width: 100%;
+
+    outline: none;
+    border: none;
+
+    background-color: #0000;
+
+    color: #fff;
+    font-size: 1rem;
+
+    overflow-y: auto;
+
+    resize: none;
+
+    &::-webkit-scrollbar {
+      display: block;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      min-height: 2rem;
+      background-color: #fff6;
+    }
+  }
+}
+
+.footer-decoy {
+  height: 4rem;
+}

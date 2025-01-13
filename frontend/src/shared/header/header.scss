@@ -1,0 +1,40 @@
+@use '../common' as *;
+
+header {
+  height: 5rem;
+
+  padding: 0 1.3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  background-color: saturate($color1, 30);
+
+  img {
+    // background-color: $color;
+    height: 4rem;
+    width: 4rem;
+    margin-right: 1rem;
+    // display: block;
+    // padding-bottom: 1rem;
+  }
+
+  h1 {
+    a {
+      color: unset;
+      text-decoration: none;
+    }
+    // background-color: $color;
+  }
+
+  .title {
+    max-width: 12rem;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    font-size: 2rem;
+    color: $color2;
+    margin-left: 3rem;
+  }
+}
